@@ -47,6 +47,10 @@ if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') {
   fail('url protocol must be http or https');
 }
 
+if (parsed.port !== '') {
+  fail('url must not specify a port');
+}
+
 if (!/^(?:www\.)?(?:x\.com|twitter\.com)$/i.test(parsed.hostname)) {
   fail('url host must be x.com or twitter.com');
 }
